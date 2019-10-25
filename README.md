@@ -2,6 +2,7 @@ React-Fuse
 
 
 Installation
+
 Clone the repository from the URL Given
 cd into main directory FuseDemo
 
