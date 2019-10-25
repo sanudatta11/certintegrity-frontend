@@ -1,0 +1,40 @@
+.banner{
+    height:50vh;
+}
+.brandTitle{
+    color: #1F9EEB;
+}
+#certificate_details{
+    margin: 25px 0px;
+}
+#certificate_desc{
+    margin-top:70px;
+    word-spacing: 5;
+    line-height: 1.5;
+}
+.certificate_themes{
+max-height: 80vh;
+overflow: auto;
+padding: 25px;
+}
+
+div.card {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+div.header {
+    background-color: #4CAF50;
+    color: white;
+    height:100%;
+  }
+  
+  div.container {
+    padding: 10px;
+    background-color: white;
+  }
+  .card:hover{
+    cursor: pointer;
+  }

@@ -1,0 +1,19 @@
+.banner{
+    height:50vh;
+}
+.brandTitle{
+    color: #1F9EEB;
+}
+#certificate_details{
+    margin: 25px 0px;
+}
+#certificate_desc{
+    margin-top:70px;
+    word-spacing: 5;
+    line-height: 1.5;
+}
+.certificate_themes{
+max-height: 80vh;
+overflow: auto;
+padding: 25px;
+}

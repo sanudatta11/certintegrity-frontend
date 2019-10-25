@@ -1,0 +1,12 @@
+.parentDiv{
+    border: 5px solid #537DBE;
+    width:100%;
+    text-align: center;
+    background-color: white;
+}
+.cert_details{
+    padding: 25px 0px;
+}
+.sideDetails{
+    color:gray;
+}
