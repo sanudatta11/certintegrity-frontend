@@ -12,6 +12,8 @@ const login = function (state = initialState, action) {
     switch ( action.type )
     {
         case Actions.LOGIN_SUCCESS:
+        case Actions.LOGIN_SUCCESS_CREATOR: 
+        case Actions.LOGIN_SUCCESS_CANDIDATE:   
         {
             return {
                 ...initialState,

@@ -24,7 +24,7 @@ class FirebaseRegisterTab extends Component {
     };
 
     onSubmit = (model) => {
-        this.props.registerWithFirebase(model);
+        this.props.registerWithCreator(model);
     };
 
     componentDidUpdate(prevProps, prevState)
@@ -120,7 +120,23 @@ class FirebaseRegisterTab extends Component {
                         variant="outlined"
                         required
                     />
-
+                    <TextFieldFormsy
+                        className="mb-16"
+                        type="text"
+                        name="designation"
+                        label="Designation"
+                        validations={{
+                            minLength: 4
+                        }}
+                        validationErrors={{
+                            minLength: 'Min character length is 4'
+                        }}
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end"><Icon className="text-20" color="action">person</Icon></InputAdornment>
+                        }}
+                        variant="outlined"
+                        required
+                    />
                     <Button
                         type="submit"
                         variant="contained"
@@ -129,7 +145,7 @@ class FirebaseRegisterTab extends Component {
                         aria-label="REGISTER WITH FIREBASE"
                         disabled={!canSubmit}
                     >
-                        Register with Firebase
+                        Register Creator
                     </Button>
                 </Formsy>
             </div>
@@ -141,7 +157,7 @@ class FirebaseRegisterTab extends Component {
 function mapDispatchToProps(dispatch)
 {
     return bindActionCreators({
-        registerWithFirebase: authActions.registerWithFirebase
+        registerWithCreator: authActions.registerWithCreator
     }, dispatch);
 }
 

@@ -1,0 +1,14 @@
+.listStyle{
+    background-color: indigo;
+    margin:45px;
+    padding: 16px 32px;
+    color:white;
+    
+}
+.deleteButton:hover{
+    color:red;
+}
+#sameStyle{
+    display: inline;
+    
+}

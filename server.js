@@ -9,6 +9,7 @@ mongoose.connect(db,{
   useCreateIndex:true
 }).then(()=>console.log("mongodb connected")).catch((e)=>console.log(e));
 app.use('/',require('./Route/user'));
+app.use('/api/company',require('./Route/company'));
 const port=process.env.PORT||5000;
 
 app.listen(port,()=>{

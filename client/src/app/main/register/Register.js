@@ -39,7 +39,7 @@ class Register extends Component {
     };
 
     onSubmit = (model) => {
-        this.props.registerWithFirebase(model);
+        this.props.registerWithCreator(model);
     };
 
     componentDidUpdate(prevProps, prevState)
@@ -107,17 +107,17 @@ class Register extends Component {
                                 className="mb-32"
                             >
                                 <Tab
-                                    icon={<img className="h-40 p-4 bg-black rounded-12" src="assets/images/logos/jwt.svg" alt="firebase"/>}
+                                    icon={<img className="h-40 p-4  rounded-12" src="assets/images/logos/settings.svg" alt="SuperAdmin"/>}
                                     className="min-w-0"
                                     label="JWT"
                                 />
                                 <Tab
-                                    icon={<img className="h-40" src="assets/images/logos/firebase.svg" alt="firebase"/>}
+                                    icon={<img className="h-40" src="assets/images/logos/shield.svg" alt="Creator"/>}
                                     className="min-w-0"
                                     label="Firebase"
                                 />
                                 <Tab
-                                    icon={<img className="h-40" src="assets/images/logos/auth0.svg" alt="auth0"/>}
+                                    icon={<img className="h-40" src="assets/images/logos/graduation.svg" alt="Candidate"/>}
                                     className="min-w-0"
                                     label="Auth0"
                                 />
@@ -146,7 +146,7 @@ class Register extends Component {
 function mapDispatchToProps(dispatch)
 {
     return bindActionCreators({
-        registerWithFirebase: Actions.registerWithFirebase
+        registerWithCreator: Actions.registerWithCreator
     }, dispatch);
 }
 

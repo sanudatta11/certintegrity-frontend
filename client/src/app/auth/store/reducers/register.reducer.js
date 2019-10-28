@@ -12,6 +12,8 @@ const register = function (state = initialState, action) {
     switch ( action.type )
     {
         case Actions.REGISTER_SUCCESS:
+        case Actions.REGISTER_SUCCESS_CREATOR:
+        case Actions.REGISTER_SUCCESS_CANDIDATE:
         {
             return {
                 ...initialState,

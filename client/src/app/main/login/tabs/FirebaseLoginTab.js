@@ -24,7 +24,7 @@ class FirebaseLoginTab extends Component {
     };
 
     onSubmit = (model) => {
-        this.props.submitLoginWithFireBase(model);
+        this.props.submitLoginWithCreator(model);
     };
 
     componentDidUpdate(prevProps, prevState)
@@ -58,7 +58,7 @@ class FirebaseLoginTab extends Component {
                     <TextFieldFormsy
                         className="mb-16"
                         type="text"
-                        name="username"
+                        name="email"
                         label="Email"
                         validations={{
                             minLength: 4
@@ -100,7 +100,7 @@ class FirebaseLoginTab extends Component {
                         disabled={!canSubmit}
                         value="firebase"
                     >
-                        Log in with Firebase
+                        Log in with Creator
                     </Button>
 
                 </Formsy>
@@ -113,7 +113,7 @@ class FirebaseLoginTab extends Component {
 function mapDispatchToProps(dispatch)
 {
     return bindActionCreators({
-        submitLoginWithFireBase: authActions.submitLoginWithFireBase
+        submitLoginWithCreator: authActions.submitLoginWithCreator
     }, dispatch);
 }
 

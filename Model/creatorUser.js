@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
-const userSchema=new Schema({
+const usercreatorSchema=new Schema({
     uuid    : {
         type:String,
         require:true
@@ -28,6 +28,10 @@ const userSchema=new Schema({
             type:String,
             require:true
         },
+        desgination:{
+            type:String,
+            require:true
+        },
         settings   : {
             type:Object
         },
@@ -36,5 +40,5 @@ const userSchema=new Schema({
         }
     }
 })
-const User=mongoose.model('user',userSchema);
-module.exports=User;
+const UserCreator=mongoose.model('usercreator',usercreatorSchema);
+module.exports=UserCreator;

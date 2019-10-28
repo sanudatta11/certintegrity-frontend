@@ -33,7 +33,7 @@ class AnalyticsDashboardApp extends Component {
         }
         return (
             <div className="w-full">
-
+                       
                 <Widget1 data={widgets.widget1}/>
 
                 <FuseAnimate animation="transition.slideUpIn" delay={200}>

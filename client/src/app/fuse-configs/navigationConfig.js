@@ -31,11 +31,19 @@ const navigationConfig = [
           {
               'id':'certificate',
               'title':'Certificate',
-                auth:authRoles.admin,
               'type':'item',
+              auth:authRoles.creator,
               'icon':'verified_user',
               'url':'/apps/certificate'
           },
+          {
+              'id':'CreateCompany',
+              'title':'CreateCompany',
+              auth:authRoles.superAdmin,
+              'type':'item',
+              'icon':'filter_vintage',
+              'url':'/apps/createCompany'
+          }
             ]
     },
     {

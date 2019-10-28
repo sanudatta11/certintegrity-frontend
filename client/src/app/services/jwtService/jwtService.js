@@ -47,10 +47,10 @@ class jwtService extends FuseUtils.EventEmitter {
         }
     };
 
-    createUser = (data) => {
+    createUserSuperAdmin = (data) => {
         console.log(data);
           return new Promise((resolve, reject) => {
-            axios.post('/api/auth/register', data)
+            axios.post('/api/auth/registerSuper', data)
                 .then(response => {
                     console.log(response);
                     if ( response.data.user )
@@ -71,14 +71,62 @@ class jwtService extends FuseUtils.EventEmitter {
         });
     };
 
-    signInWithEmailAndPassword = (email, password) => {
+
+    createUserCreator = (data) => {
+        console.log(data);
+          return new Promise((resolve, reject) => {
+            axios.post('/api/auth/registerCreator', data)
+                .then(response => {
+                    console.log(response);
+                    if ( response.data.user )
+                    {
+                        console.log("in this first block of register creator");
+                        this.setSession(response.data.access_token);
+                        resolve(response.data.user);
+                        console.log(response.data.user);
+                    }
+                    else
+                    {
+                        console.log("in this second block of register creator");
+                        console.log(response.data);
+                        reject(response.data.error);
+                        
+                    }
+                });
+        });
+    };
+    createUserCandidate = (data) => {
+        console.log(data);
+          return new Promise((resolve, reject) => {
+            axios.post('/api/auth/registerCandidate', data)
+                .then(response => {
+                    console.log(response);
+                    if ( response.data.user )
+                    {
+                        console.log("in this first block of register candidate");
+                        this.setSession(response.data.access_token);
+                        resolve(response.data.user);
+                        console.log(response.data.user);
+                    }
+                    else
+                    {
+                        console.log("in this second block of register candidate");
+                        console.log(response.data);
+                        reject(response.data.error);
+                        
+                    }
+                });
+        });
+    };
+
+    signInWithEmailAndPasswordSuper = (email, password) => {
         return new Promise((resolve, reject) => {
            
             const data={
                 email,
                 password
             }
-            axios.post('/api/auth',data).then(response => {
+            axios.post('/api/authSuper',data).then(response => {
               
                 if ( response.data.user )
                 {
@@ -92,6 +140,54 @@ class jwtService extends FuseUtils.EventEmitter {
             });
         });
     };
+    signInWithEmailAndPasswordCreator = (email, password) => {
+        console.log("reached in creator ")
+        return new Promise((resolve, reject) => {
+           
+            const data={
+                email,
+                password
+            }
+            axios.post('/api/authCreator',data).then(response => {
+              
+                if ( response.data.user )
+                {
+                    this.setSession(response.data.access_token);
+                    resolve(response.data.user);
+                }
+                else
+                {
+                    reject(response.data.error);
+                }
+            });
+        });
+    };
+
+    signInWithEmailAndPasswordCandidate = (email, password) => {
+        return new Promise((resolve, reject) => {
+           
+            const data={
+                email,
+                password
+            }
+            axios.post('/api/authCandidate',data).then(response => {
+              
+                if ( response.data.user )
+                {
+                    this.setSession(response.data.access_token);
+                    resolve(response.data.user);
+                }
+                else
+                {
+                    reject(response.data.error);
+                }
+            });
+        });
+    };
+
+
+
+
 
 
     signInWithToken = () => {
